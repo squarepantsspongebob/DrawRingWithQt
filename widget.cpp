@@ -36,9 +36,9 @@ void Widget::paintEvent (QPaintEvent *)
     painter->drawPath(path1);
 
 
-    bigCircle.addEllipse(0-radius, 35-radius, radius * 2, radius * 2);
-    smallCircle.addEllipse(0-radius, 35-radius, radius * 2, radius * 2);
-    QPainterPath path2 = bigCircle - smallCircle;
+    QPainterPath path2;
+    path2.addPath (path1);
+    path2.translate (0,70);
     painter->drawPath(path2);
 
     painter->restore();
